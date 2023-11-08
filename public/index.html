@@ -112,7 +112,19 @@
         <li>není nutné vyhřívat trysku</li>
         <li>není nutné používat podložku s lepidlem</li>
       </ul>
-
+      <h2>Kvíz</h2>
+      <div class="container">
+        <div>
+          <p id="questionNum" style="font-size: 20px"></p>
+          <h3 id="question"></h3>
+        </div>
+        <div id="answers"></div>
+        <button id="next" onclick="next()">
+          Další
+          <span class="material-symbols-rounded">arrow_forward</span>
+        </button>
+        <p id="score"></p>
+    </div>
       <h2>Zdroje</h2>
       <ul id="sources">
         <li>https://makerslab.cz/typy-3d-tiskaren/</li>
@@ -121,5 +133,7 @@
         </li>
       </ul>
     </div>
+    <script src="./scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
   </body>
 </html>

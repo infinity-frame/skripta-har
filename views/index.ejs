@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skripty HAR</title>
+    <title>Skripta HAR</title>
   </head>
   <body>
     <header>
@@ -32,7 +32,7 @@
         <h2>Všechny lekce</h2>
         <div id="lessongrid">
             <% for (let index = 0; index < lessons.length; index++) {%>
-                <div>
+                <div style="background-image: url(../images/<%=lessons[index].image%>);">
                     <h3><%=lessons[index].title%></h3>
                     <button onclick="location.href='/lessons/<%=index%>'">Přejít na lekci<span class="material-symbols-rounded">arrow_forward</span></button>
                 </div>

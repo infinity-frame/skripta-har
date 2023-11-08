@@ -1,8 +1,39 @@
 body {
   font-family: "Poppins", sans-serif;
+}
+
+.content {
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 1000px;
+  padding: 40px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+header {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
   padding: 20px;
+  text-shadow: 0px 0px 20px rgb(0, 0, 0);
+}
+
+header .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header button {
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+}
+
+header h1 {
+  margin: 0;
 }
 
 .material-symbols-rounded {
@@ -53,10 +84,19 @@ h4 {
   margin: 30px 0 10px 0;
 }
 
-p {
+p,
+li {
   font-weight: 400;
   font-size: 16px;
   margin: 10px 0;
+  line-height: 1.5;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 10px 0;
+  text-align: center;
 }
 
 .gridtwo {
@@ -92,15 +132,12 @@ p {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
+
   display: none;
 }
 
 button {
-  background-color: #ffffff00;
+  background-color: transparent;
   border: 1px solid #000000;
   border-radius: 10px;
   padding: 10px;
@@ -111,9 +148,32 @@ button {
   transition: 0.2s;
   margin: 10px 0;
   width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 button:hover {
   background-color: #000000;
   color: #ffffff;
+}
+
+button.correct {
+  color: #30b730;
+  border: 1px solid #30b730;
+}
+
+button.correct:hover,
+button.incorrect:hover {
+  background-color: transparent;
+}
+
+button.incorrect {
+  color: #fa4848;
+  border: 1px solid #fa4848;
+}
+
+button:disabled {
+  cursor: not-allowed;
 }

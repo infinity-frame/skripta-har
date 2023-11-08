@@ -79,11 +79,40 @@ function next() {
 }
 
 function check(questionID, answer) {
-  if (answer === questionsAndAnswers[questionID].answers[0]) {
-    alert("Správně!");
-    document.getElementById("next").style.display = "flex";
-  } else {
-    alert("Špatně!");
-    document.getElementById("next").style.display = "flex";
+  const correctAnswer = questionsAndAnswers[questionID].answers[0];
+
+  if (answer === correctAnswer) {
+    var triangle = confetti.shapeFromPath({ path: "M0 10 L5 0 L10 10z" });
+
+    confetti({
+      particleCount: 100,
+      startVelocity: 30,
+      spread: 360,
+      origin: { x: 0.5, y: 0.35 },
+    });
   }
+
+  const answerButtons = document
+    .getElementById("answers")
+    .getElementsByTagName("button");
+
+  for (let i = 0; i < answerButtons.length; i++) {
+    const button = answerButtons[i];
+    if (button.innerHTML === correctAnswer) {
+      button.classList.add("correct");
+    } else {
+      button.classList.add("incorrect");
+    }
+    button.disabled = true;
+
+    if (button.innerHTML === answer) {
+      if (answer === correctAnswer) {
+        button.classList.add("correct");
+      } else {
+        button.classList.add("incorrect");
+      }
+    }
+  }
+
+  document.getElementById("next").style.display = "flex";
 }

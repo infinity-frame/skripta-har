@@ -12,89 +12,107 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3D tiskárny</title>
   </head>
   <body>
-    <h1>3D tiskárny</h1>
-    <p>Vytvořili Vojtěch Habeš a Kryštof Bruthans</p>
-    <h2>Princip fungování</h2>
-    <h3>FDM (Fused deposition modelling)</h3>
-    <p>
-      Jedná se v podstatě o tisknutí filamentu (tzv. aditivní metoda) podobně,
-      jako bychom vykreslovali tvary tavnou pistolí. Filament je nahříván na
-      vysokou teplotu a protlačován skrz trysku na podložku, kde se filament
-      zchladí a zpevní.
-    </p>
-    <h4>Kartézská</h4>
-    <div class="gridtwo">
+    <header style="background-image: url('./images/3d-tiskarny.jpeg')">
+      <div class="content">
+        <h1>3D tiskárny</h1>
+        <p class="subtitle">Vytvořili Vojtěch Habeš a Kryštof Bruthans</p>
+        <button onclick="window.location.href = './quiz'">
+          Přejít na kvíz
+          <span class="material-symbols-rounded">arrow_forward</span>
+        </button>
+      </div>
+    </header>
+    <div class="content">
+      <h2>Princip fungování</h2>
+      <h3>FDM (Fused deposition modelling)</h3>
+      <p>
+        Jedná se v podstatě o tisknutí filamentu (tzv. aditivní metoda) podobně,
+        jako bychom vykreslovali tvary tavnou pistolí. Filament je nahříván na
+        vysokou teplotu a protlačován skrz trysku na podložku, kde se filament
+        zchladí a zpevní.
+      </p>
+      <h4>Kartézská</h4>
+      <div class="gridtwo">
+        <ul>
+          <li>nejpopulárnější a nejtradičnější</li>
+          <li>využívá kartézské soustavy souřadnic</li>
+          <li>
+            tryska (extruder) se pohybuje ve dvou osách a podložka v jedné
+          </li>
+        </ul>
+      </div>
+      <h4>Delta</h4>
       <ul>
-        <li>nejpopulárnější a nejtradičnější</li>
-        <li>využívá kartézské soustavy souřadnic</li>
-        <li>tryska (extruder) se pohybuje ve dvou osách a podložka v jedné</li>
+        <li>technologie tří ramen -> ovládají trysku uprostřed</li>
+        <li>těžší na sestavení a kalibraci</li>
+        <li>vyšší rychlost (oproti Kartézské)</li>
       </ul>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Prusa_i3_metal_frame.jpg/1200px-Prusa_i3_metal_frame.jpg"
-        alt="Kartézská tiskárna"
-      />
-    </div>
-    <h4>Delta</h4>
-    <ul>
-      <li>technologie tří ramen -> ovládají trysku uprostřed</li>
-      <li>těžší na sestavení a kalibraci</li>
-      <li>vyšší rychlost (oproti Kartézské)</li>
-    </ul>
-    <h4>Polar</h4>
-    <ul>
-      <li>používají dvě osy - pohyb tiskové hlavy a rotační podložky</li>
-      <li>jednodušší na sestavení</li>
-      <li>
-        těžké ovládání a malá podpora slicerů (software pro zadávání pohybových
-        instrukcí tiskárně)
-      </li>
-      <li>výhoda zejména pro tisk vázovitých modelů</li>
-    </ul>
-    <h4>Scara</h4>
-    <ul>
-      <li>
-        ovládání trysky pomocí dvou robotických ramen (nebo jednoho
-        dvoukloubého)
-      </li>
-      <li>jednoduché sestavení</li>
-    </ul>
-    <h3>SL (stereolitografie)</h3>
-    <p>
-      Tyto tiskárny využívají tzv. subtraktivní metodu tisku, tzn. odebírají
-      materiál do žádoucího tvaru. Tiskárny tohoto typu využívají vytvrzování
-      fotocitlivé pryskyřice pomocí světla určité vlnové délky.
-    </p>
-    <h4>DLP</h4>
-    <ul>
-      <li>využívají především spodní osvit pomocí DLP projektoru</li>
-      <li>tisky velmi přesné a hladké</li>
-      <li>nevýhodou je jejich chemický proces při tisku</li>
-      <li>osvit jak přes horní i spodní přes průhledné dno</li>
-    </ul>
-    <h4>SLA</h4>
-    <ul>
-      <li>pracují podobně jako DLP tiskárny</li>
-      <li>pro osvit využívají místo DLP projektoru laser</li>
-      <li>uplatnění v medicíně a šperkařství</li>
-    </ul>
-    <h2>Parametry</h2>
-    <ul>
-      <li>technologie (SLA/FDM)</li>
-      <li>tiskový materiál (filament)</li>
+      <h4>Polar</h4>
       <ul>
-        <li>typ materiálu - ABS, PETG, PLA...</li>
-        <li>průměr filamentu</li>
+        <li>používají dvě osy - pohyb tiskové hlavy a rotační podložky</li>
+        <li>jednodušší na sestavení</li>
+        <li>
+          těžké ovládání a malá podpora slicerů (software pro zadávání
+          pohybových instrukcí tiskárně)
+        </li>
+        <li>výhoda zejména pro tisk vázovitých modelů</li>
       </ul>
-    </ul>
-    <h2>Typy filamentů</h2>
-    <h2>Kvíz</h2>
-    <a href="/public/quiz">Test</a>
-    <footer>
+      <h4>Scara</h4>
+      <ul>
+        <li>
+          ovládání trysky pomocí dvou robotických ramen (nebo jednoho
+          dvoukloubého)
+        </li>
+        <li>jednoduché sestavení</li>
+      </ul>
+      <h3>SL (stereolitografie)</h3>
+      <p>
+        Tyto tiskárny využívají tzv. subtraktivní metodu tisku, tzn. odebírají
+        materiál do žádoucího tvaru. Tiskárny tohoto typu využívají vytvrzování
+        fotocitlivé pryskyřice pomocí světla určité vlnové délky.
+      </p>
+      <h4>DLP</h4>
+      <ul>
+        <li>využívají především spodní osvit pomocí DLP projektoru</li>
+        <li>tisky velmi přesné a hladké</li>
+        <li>nevýhodou je jejich chemický proces při tisku</li>
+        <li>osvit jak přes horní i spodní přes průhledné dno</li>
+      </ul>
+      <h4>SLA</h4>
+      <ul>
+        <li>pracují podobně jako DLP tiskárny</li>
+        <li>pro osvit využívají místo DLP projektoru laser</li>
+        <li>uplatnění v medicíně a šperkařství</li>
+      </ul>
+      <h2>Parametry</h2>
+      <ul>
+        <li>technologie (SLA/FDM)</li>
+        <li>tiskový materiál (filament)</li>
+        <ul>
+          <li>typ materiálu - ABS, PETG, PLA...</li>
+          <li>průměr filamentu</li>
+        </ul>
+      </ul>
+      <h2>Typy filamentů</h2>
+      <h3>PLA</h3>
+      <ul>
+        <li>nejpoužívanější</li>
+        <li>biologicky rozložitelný</li>
+        <li>snadno se tiskne</li>
+        <li>není nutné vyhřívat podložku</li>
+        <li>není nutné vyhřívat trysku</li>
+        <li>není nutné používat podložku s lepidlem</li>
+      </ul>
+
       <h2>Zdroje</h2>
       <ul id="sources">
         <li>https://makerslab.cz/typy-3d-tiskaren/</li>
@@ -102,6 +120,6 @@
           https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Prusa_i3_metal_frame.jpg/1200px-Prusa_i3_metal_frame.jpg
         </li>
       </ul>
-    </footer>
+    </div>
   </body>
 </html>

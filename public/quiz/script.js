@@ -130,5 +130,7 @@ function check(questionID, answer) {
   const percentage = Math.round((correctAnswers / (currentQuestion + 1)) * 100);
 
   document.getElementById("score").style.display = "block";
-  document.getElementById("score").innerHTML = `Úspěšnost: ${percentage}%`;
+  document.getElementById(
+    "score"
+  ).innerHTML = `Dosavadní úspěšnost: ${percentage}%`;
 }

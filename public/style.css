@@ -1,8 +1,13 @@
 body {
   font-family: "Poppins", sans-serif;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 1100px;
   padding: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 ul,
@@ -10,6 +15,7 @@ li {
   list-style-type: circle;
   list-style-position: inside;
   margin: 5px 0;
+  font-size: 18px;
 }
 
 #sources,
@@ -32,19 +38,24 @@ h2 {
 
 h3 {
   font-weight: 600;
-  font-size: 32px;
+  font-size: 36px;
   margin: 30px 0 10px 0;
 }
 
 h4 {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 27px;
   text-decoration: underline;
   margin: 30px 0 10px 0;
 }
 
 p {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   margin: 10px 0;
+}
+
+.gridtwo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }

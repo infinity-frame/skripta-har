@@ -25,8 +25,8 @@
       <div class="content">
         <h1>3D tiskárny</h1>
         <p class="subtitle">Vytvořili Vojtěch Habeš a Kryštof Bruthans</p>
-        <button onclick="window.location.href = './quiz'">
-          Přejít na kvíz
+        <button onclick="window.location.href = './#quiz'">
+          Kvíz
           <span class="material-symbols-rounded">arrow_forward</span>
         </button>
       </div>
@@ -41,15 +41,11 @@
         zchladí a zpevní.
       </p>
       <h4>Kartézská</h4>
-      <div class="gridtwo">
-        <ul>
-          <li>nejpopulárnější a nejtradičnější</li>
-          <li>využívá kartézské soustavy souřadnic</li>
-          <li>
-            tryska (extruder) se pohybuje ve dvou osách a podložka v jedné
-          </li>
-        </ul>
-      </div>
+      <ul>
+        <li>nejpopulárnější a nejtradičnější</li>
+        <li>využívá kartézské soustavy souřadnic</li>
+        <li>tryska (extruder) se pohybuje ve dvou osách a podložka v jedné</li>
+      </ul>
       <h4>Delta</h4>
       <ul>
         <li>technologie tří ramen -> ovládají trysku uprostřed</li>
@@ -112,7 +108,7 @@
         <li>není nutné vyhřívat trysku</li>
         <li>není nutné používat podložku s lepidlem</li>
       </ul>
-      <h2>Kvíz</h2>
+      <h2 id="quiz">Kvíz</h2>
       <div class="container">
         <div>
           <p id="questionNum" style="font-size: 20px"></p>
@@ -124,7 +120,7 @@
           <span class="material-symbols-rounded">arrow_forward</span>
         </button>
         <p id="score"></p>
-    </div>
+      </div>
       <h2>Zdroje</h2>
       <ul id="sources">
         <li>https://makerslab.cz/typy-3d-tiskaren/</li>

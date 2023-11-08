@@ -23,16 +23,14 @@
   <body>
     <header>
       <div class="content">
-        <p class="author"><span class="material-symbols-rounded">person</span><%=locals.lesson.author%></p>
         <h1>3D tiskárny</h1>
-        <p class="subtitle">Vytvořili Vojtěch Habeš a Kryštof Bruthans</p>
-        <button onclick="window.location.href = './quiz'">
-          Přejít na kvíz
-          <span class="material-symbols-rounded">arrow_forward</span>
+        <button onclick="window.location.href = '/'">
+          <span class="material-symbols-rounded">arrow_back</span>Zpět na hlavní stránku
         </button>
       </div>
     </header>
     <div class="content">
+      <p class="author"><span class="material-symbols-rounded">person</span><%=locals.lesson.author%></p>
       <h2>Princip fungování</h2>
       <h3>FDM (Fused deposition modelling)</h3>
       <p>

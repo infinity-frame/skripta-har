@@ -11,5 +11,8 @@ app.get("/", function(req, res) {
     res.render("index.ejs", { lessons: lessons.response})
 })
 
+const lessonrouter = require("./routes/lessonrouter.js")
+app.use("/", lessonrouter)
+
 app.listen(port)
 console.log(`App started! Listening on port ${port}`)

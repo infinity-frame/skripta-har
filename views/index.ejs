@@ -24,7 +24,7 @@
   <body>
     <header>
       <div class="content">
-        <h1>Skripty HAR</h1>
+        <h1>Skripta HAR</h1>
         <p class="subtitle">Vytvořili Vojtěch Habeš a Kryštof Bruthans.</p>
       </div>
     </header>
@@ -34,7 +34,7 @@
             <% for (let index = 0; index < lessons.length; index++) {%>
                 <div>
                     <h3><%=lessons[index].title%></h3>
-                    <button onclick="location.href='<%=lessons[index].href%>'">Přejít na lekci</button>
+                    <button onclick="location.href='/lessons/<%=index%>'">Přejít na lekci<span class="material-symbols-rounded">arrow_forward</span></button>
                 </div>
             <%}%>
         </div>

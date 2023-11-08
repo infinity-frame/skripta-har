@@ -43,7 +43,7 @@ h2 {
 h3 {
   font-weight: 600;
   font-size: 36px;
-  margin: 30px 0 10px 0;
+  margin: 40px 0 10px 0;
 }
 
 h4 {
@@ -78,25 +78,25 @@ p {
   margin: 0;
 }
 
+.container #question {
+  margin-top: 10px 0;
+}
+
 .container #answers {
   display: flex;
   flex-direction: row;
   gap: 20px;
 }
 
-.container .nav {
+.container #next {
   position: absolute;
-  bottom: 24px;
-  right: 24px;
+  bottom: 20px;
+  right: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
-}
-
-.container .nav span {
-  cursor: pointer;
-  font-size: 28px;
+  gap: 5px;
+  display: none;
 }
 
 button {
@@ -104,6 +104,7 @@ button {
   border: 1px solid #000000;
   border-radius: 10px;
   padding: 10px;
+  height: 40px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;

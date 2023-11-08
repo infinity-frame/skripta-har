@@ -63,6 +63,8 @@ function updateQuestion(index) {
   document.getElementById("questionNum").innerHTML = `Otázka ${index + 1} z ${
     questionsAndAnswers.length
   }`;
+
+  document.getElementById("next").style.display = "none";
 }
 
 updateQuestion(currentQuestion);
@@ -72,22 +74,16 @@ function next() {
   if (currentQuestion >= questionsAndAnswers.length) {
     currentQuestion = 0;
   }
-  updateQuestion(currentQuestion);
-}
-
-function prev() {
-  currentQuestion--;
-  if (currentQuestion < 0) {
-    currentQuestion = questionsAndAnswers.length - 1;
-  }
+  document.getElementById("next").style.display = "none";
   updateQuestion(currentQuestion);
 }
 
 function check(questionID, answer) {
   if (answer === questionsAndAnswers[questionID].answers[0]) {
     alert("Správně!");
-    next();
+    document.getElementById("next").style.display = "flex";
   } else {
     alert("Špatně!");
+    document.getElementById("next").style.display = "flex";
   }
 }

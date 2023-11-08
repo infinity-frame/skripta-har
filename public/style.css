@@ -1,0 +1,50 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+ul,
+li {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin: 5px 0;
+}
+
+#sources,
+#sources > li {
+  list-style-type: none;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 60px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 44px;
+  margin: 30px 0 10px 0;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 32px;
+  margin: 30px 0 10px 0;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 20px;
+  text-decoration: underline;
+  margin: 30px 0 10px 0;
+}
+
+p {
+  font-weight: 400;
+  font-size: 14px;
+  margin: 10px 0;
+}

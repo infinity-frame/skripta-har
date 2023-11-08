@@ -1,0 +1,25 @@
+#lessongrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+    grid-gap: 20px;
+}
+
+#lessongrid div {
+    background-color: black;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#lessongrid h3 {
+    color: white;
+}
+
+#lessongrid button {
+    border: 1px solid white;
+    color: white;
+}
+
+#lessongrid button:hover {
+    color: black;
+    background-color: white;
+}

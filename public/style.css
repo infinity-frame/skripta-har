@@ -44,6 +44,7 @@ header h1 {
 
 .material-symbols-rounded {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  margin-right: 5px;
 }
 
 img {
@@ -62,6 +63,10 @@ li {
 #sources,
 #sources > li {
   list-style-type: none;
+}
+
+#sources > li {
+  display: flex;
 }
 
 h1 {
@@ -96,6 +101,16 @@ li {
   font-size: 16px;
   margin: 10px 0;
   line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+a:hover {
+  color: gray;
 }
 
 .gridtwo {

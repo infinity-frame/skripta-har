@@ -176,3 +176,7 @@ button.incorrect {
 button:disabled {
   cursor: not-allowed;
 }
+
+#score {
+  display: none;
+}

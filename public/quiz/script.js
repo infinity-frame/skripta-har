@@ -42,6 +42,7 @@ const questionsAndAnswers = [
 ];
 
 let currentQuestion = 0;
+let correctAnswers = 0;
 
 function updateQuestion(index) {
   document.getElementById("question").innerHTML =
@@ -72,7 +73,17 @@ updateQuestion(currentQuestion);
 function next() {
   currentQuestion++;
   if (currentQuestion >= questionsAndAnswers.length) {
+    alert(
+      `Konec kvízu! Úspěšnost: ${Math.round(
+        (correctAnswers / questionsAndAnswers.length) * 100
+      )}%`
+    );
+
     currentQuestion = 0;
+    correctAnswers = 0;
+
+    document.getElementById("score").style.display = "none";
+    document.getElementById("score").innerHTML = "";
   }
   document.getElementById("next").style.display = "none";
   updateQuestion(currentQuestion);
@@ -82,14 +93,14 @@ function check(questionID, answer) {
   const correctAnswer = questionsAndAnswers[questionID].answers[0];
 
   if (answer === correctAnswer) {
-    var triangle = confetti.shapeFromPath({ path: "M0 10 L5 0 L10 10z" });
-
     confetti({
       particleCount: 100,
       startVelocity: 30,
       spread: 360,
       origin: { x: 0.5, y: 0.35 },
     });
+
+    correctAnswers++;
   }
 
   const answerButtons = document
@@ -115,4 +126,9 @@ function check(questionID, answer) {
   }
 
   document.getElementById("next").style.display = "flex";
+
+  const percentage = Math.round((correctAnswers / (currentQuestion + 1)) * 100);
+
+  document.getElementById("score").style.display = "block";
+  document.getElementById("score").innerHTML = `Úspěšnost: ${percentage}%`;
 }

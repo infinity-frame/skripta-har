@@ -7,11 +7,14 @@ const dbURI = "mongodb://localhost:27017"
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 
-app.get("/", function(req, res) {
-    let lessons = fs.readFileSync('./lessons.json', 'utf-8');
-    lessons = JSON.parse(lessons)
-    res.render("index.ejs", { lessons: lessons.response})
-})
+    app.listen(3000, () => {
+      console.log("Server started on port 3000");
+    });
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+};
 
 const lessonrouter = require("./routes/lessonrouter.js")
 app.use("/", lessonrouter)

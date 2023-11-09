@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="cs">
   <head>
-    <%- include("./partials/head.ejs") %>
+    <%-include("./partials/head.ejs")%>
   </head>
   <body>
-    <header>
-      <div class="content">
-        <h1>Skripta HAR</h1>
-        <p class="subtitle">Vytvořili Vojtěch Habeš a Kryštof Bruthans.</p>
-      </div>
-    </header>
+    <%-include("./partials/header.ejs", {heading: "Skripta HAR",
+    subtitle:"Vytvořili Kryštof Bruthans a Vojtěch Habeš"})%>
+
     <div class="content">
       <h2>Všechny lekce</h2>
       <div id="lessongrid">

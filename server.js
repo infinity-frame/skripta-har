@@ -1,7 +1,9 @@
 const express = require("express")
 const app = express()
 const fs = require("fs")
+const mongoose = require("mongoose")
 const port = 3000
+const dbURI = "mongodb://localhost:27017"
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 
@@ -14,5 +16,10 @@ app.get("/", function(req, res) {
 const lessonrouter = require("./routes/lessonrouter.js")
 app.use("/", lessonrouter)
 
-app.listen(port)
-console.log(`App started! Listening on port ${port}`)
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(function(result) {
+        console.log(`Successfully connected to db ${dbURI}`)
+        app.listen(port)
+        console.log(`App started! Listening on port ${port}`)
+    })
+    .catch(function(err){console.log(err)})

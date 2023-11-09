@@ -23,7 +23,7 @@ header {
   color: #ffffff;
   padding: 20px;
   text-shadow: 0px 0px 20px rgb(0, 0, 0);
-  background-image: url("./images/3d-tiskarny.jpeg");
+  background-image: url("/images/3d-tiskarny.jpeg");
   height: 190px;
 }
 
@@ -108,7 +108,7 @@ li {
   line-height: 1.5;
 }
 
-.author{
+.author {
   display: flex;
   font-weight: 500;
   font-size: 18px;

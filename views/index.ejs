@@ -1,25 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs">
   <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="https://api.ssps.cajthaml.eu/file/64d9f18f79dad891e8a07c73"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="index.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skripta HAR</title>
+    <%- include("./partials/head.ejs") %>
   </head>
   <body>
     <header>
@@ -29,15 +11,18 @@
       </div>
     </header>
     <div class="content">
-        <h2>Všechny lekce</h2>
-        <div id="lessongrid">
-            <% for (let index = 0; index < lessons.length; index++) {%>
-                <div style="background-image: url(../images/<%=lessons[index].image%>);">
-                    <h3><%=lessons[index].title%></h3>
-                    <button onclick="location.href='/lessons/<%=index%>'">Přejít na lekci<span class="material-symbols-rounded">arrow_forward</span></button>
-                </div>
-            <%}%>
+      <h2>Všechny lekce</h2>
+      <div id="lessongrid">
+        <%for (let index = 0; index < lessons.length; index++) {%>
+        <div style="background-image: url(/images/<%=lessons[index].image%>)">
+          <h3><%=lessons[index].title%></h3>
+          <button onclick="location.href='/lesson/<%=index%>'">
+            Přejít na lekci
+            <span class="material-symbols-rounded">arrow_forward</span>
+          </button>
         </div>
+        <%}%>
+      </div>
     </div>
   </body>
 </html>

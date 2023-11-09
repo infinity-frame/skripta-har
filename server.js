@@ -1,13 +1,30 @@
-const express = require("express")
-const app = express()
-const fs = require("fs")
-const mongoose = require("mongoose")
-const port = 3000
-const dbURI = "mongodb://localhost:27017"
-app.set("view engine", "ejs")
-app.use(express.static("public"))
+const express = require("express");
+const mongoose = require("mongoose");
+const path = require("path");
 
-    app.listen(3000, () => {
+// Config
+const app = express();
+const port = 3000;
+const viewsPath = path.join(__dirname, "views");
+const dbURI = "mongodb://localhost:27017";
+
+// Middleware
+app.set("view engine", "ejs");
+app.use(express.static("public"));
+app.set("views", viewsPath);
+
+// Routes
+const indexrouter = require("./routes/index.js");
+app.use("/", indexrouter);
+
+const lessonrouter = require("./routes/lesson.js");
+app.use("/lesson", lessonrouter);
+
+// Start server
+const start = async () => {
+  try {
+    await mongoose.connect(dbURI);
+    app.listen(port, () => {
       console.log("Server started on port 3000");
     });
   } catch (error) {
@@ -16,13 +33,4 @@ app.use(express.static("public"))
   }
 };
 
-const lessonrouter = require("./routes/lessonrouter.js")
-app.use("/", lessonrouter)
-
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(function(result) {
-        console.log(`Successfully connected to db ${dbURI}`)
-        app.listen(port)
-        console.log(`App started! Listening on port ${port}`)
-    })
-    .catch(function(err){console.log(err)})
+start();

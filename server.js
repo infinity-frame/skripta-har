@@ -21,7 +21,6 @@ const lessonRouter = require("./routes/lesson.js");
 app.use("/lesson", lessonRouter);
 
 // Start server
-
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });

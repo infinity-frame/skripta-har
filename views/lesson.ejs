@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs">
-  <head>
-    <%-include("./partials/head.ejs")%>
-  </head>
+  <%-include("./partials/head.ejs")%>
+
   <body>
     <%-include("./partials/header.ejs", { heading: lesson.title, subtitle: null,
     button: true })%>
@@ -17,7 +16,7 @@
       <h2>Kvíz</h2>
       <div class="container">
         <div>
-          <p id="questionNum" style="font-size: 20px"></p>
+          <p id="questionNum"></p>
           <h3 id="question"></h3>
         </div>
         <div id="answers"></div>

@@ -4,13 +4,12 @@
     <%-include("./partials/head.ejs")%>
   </head>
   <body>
-    <%-include("./partials/header.ejs", { heading: "Skripta HAR", subtitle:
-    null, button: true })%>
+    <%-include("./partials/header.ejs", { heading: lesson.title, subtitle: null,
+    button: true })%>
 
     <div class="content">
       <p class="chip">
-        <span class="material-symbols-rounded">person</span
-        ><%=locals.lesson.author%>
+        <span class="material-symbols-rounded">person</span><%=lesson.author%>
       </p>
 
       <%-html%>

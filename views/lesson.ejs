@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <%-include("./partials/head.ejs")%>
+  </head>
+  <body>
+    <%-include("./partials/header.ejs", { heading: "Skripta HAR", subtitle:
+    null, button: true })%>
+
+    <div class="content">
+      <p class="chip">
+        <span class="material-symbols-rounded">person</span
+        ><%=locals.lesson.author%>
+      </p>
+
+      <%-html%>
+
+      <h2>Kvíz</h2>
+      <div class="container">
+        <div>
+          <p id="questionNum" style="font-size: 20px"></p>
+          <h3 id="question"></h3>
+        </div>
+        <div id="answers"></div>
+        <button id="next" onclick="next()">
+          Další
+          <span class="material-symbols-rounded">arrow_forward</span>
+        </button>
+        <p id="score"></p>
+      </div>
+    </div>
+
+    <script src="/scripts/quiz.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
+  </body>
+</html>

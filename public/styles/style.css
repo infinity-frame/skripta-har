@@ -108,10 +108,14 @@ li {
   line-height: 1.5;
 }
 
-.author {
+.chip {
   display: flex;
-  font-weight: 500;
-  font-size: 18px;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 100px;
+  background-color: #f1f1f1;
+  width: fit-content;
 }
 
 a {

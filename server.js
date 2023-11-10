@@ -10,17 +10,23 @@ const dbURI = "mongodb://localhost:27017";
 
 // Middleware
 app.set("view engine", "ejs");
-app.use(express.static("public"));
 app.set("views", viewsPath);
+app.use(express.static("public"));
 
 // Routes
-const indexrouter = require("./routes/index.js");
-app.use("/", indexrouter);
+const indexRouter = require("./routes/index.js");
+app.use("/", indexRouter);
 
-const lessonrouter = require("./routes/lesson.js");
-app.use("/lesson", lessonrouter);
+const lessonRouter = require("./routes/lesson.js");
+app.use("/lesson", lessonRouter);
 
 // Start server
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
+
+/*
 const start = async () => {
   try {
     await mongoose.connect(dbURI);
@@ -34,3 +40,4 @@ const start = async () => {
 };
 
 start();
+*/

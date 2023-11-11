@@ -1,58 +1,18 @@
-const questionsAndAnswers = [
-    {
-      question: "Kdo vytvořil tento web?",
-      answers: ["Vojtěch Habeš a Kryštof Bruthans", "Bill Gates", "Steve Jobs"],
-    },
-    {
-      question: "Jakou metodu tisku využívá FDM tiskárna?",
-      answers: ["Additivní", "Subtraktivní", "Kombinovanou"],
-    },
-    {
-      question: "Jakou metodu tištění využívá SL tiskárna?",
-      answers: ["Subtraktivní", "Additivní", "Kombinovanou"],
-    },
-    {
-      question: "Co to je kartézská soustava?",
-      answers: [
-        "Souřadnicová soustava",
-        "Soustava pro zápis čísel",
-        "Soustava pro zápis písmen",
-      ],
-    },
-    {
-      question: "Jak vypadá delta tiskárna?",
-      answers: [
-        "Má 3 ramena a trysku uprostřed",
-        "Má 3 ramena a trysku na jednom z nich",
-        "Má 3 ramena a trysku na každém z nich",
-      ],
-    },
-    {
-      question: "Na které modely se nám bude hodit Scara tiskárna?",
-      answers: [
-        "Dělání vázovitých modelů",
-        "Dělání čtvercových modelů",
-        "Dělání hladkých precizních modelů",
-      ],
-    },
-    {
-      question: "Kolik os má polar tiskárna?",
-      answers: ["Má 2 osy", "Má 1 osu", "Má 3 osy", "Má 4 osy"],
-    },
-  ];
+let questionsAndAnswers = new Array();
+let currentQuestion = 0;
+let correctAnswers = 0;
+
+function SetQuiz(quiz) {
+  questionsAndAnswers = JSON.parse(quiz);
+  updateQuestion(currentQuestion);
+}
   
-  let currentQuestion = 0;
-  let correctAnswers = 0;
-  
-  function updateQuestion(index) {
-    document.getElementById("question").innerHTML =
-      questionsAndAnswers[index].question;
-  
-    const answersCopy = questionsAndAnswers[index].answers
+function updateQuestion(index) {
+  document.getElementById("question").innerHTML = questionsAndAnswers[index].question;
+  const answersCopy = questionsAndAnswers[index].answers
       .slice()
       .sort(() => Math.random() - 0.5);
-  
-    document.getElementById("answers").innerHTML = "";
+  document.getElementById("answers").innerHTML = "";
   
     answersCopy.forEach((answer) => {
       const button = document.createElement("button");
@@ -67,8 +27,6 @@ const questionsAndAnswers = [
   
     document.getElementById("next").style.display = "none";
   }
-  
-  updateQuestion(currentQuestion);
   
   function next() {
     currentQuestion++;

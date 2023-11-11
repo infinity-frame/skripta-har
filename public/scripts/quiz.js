@@ -3,8 +3,12 @@ let currentQuestion = 0;
 let correctAnswers = 0;
 
 function SetQuiz(quiz) {
-  questionsAndAnswers = JSON.parse(quiz);
-  updateQuestion(currentQuestion);
+  if (quiz.length == 2) {
+    return;
+  } else {
+    questionsAndAnswers = JSON.parse(quiz);
+    updateQuestion(currentQuestion);
+  }
 }
   
 function updateQuestion(index) {

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const bodyParser = require('body-parser');
 const showdown = require("showdown");
 const converter = new showdown.Converter();
 //Setup mongoose and connect to the database
@@ -10,6 +11,7 @@ mongoose.connect(dbURI)
     console.log(`Successfully connected to db ${dbURI}`)
 })
 .catch(function(err){console.log(err)})
+router.use(bodyParser.urlencoded({ extended: true }));
 
 //Create schema & model for lesson
 const Schema = mongoose.Schema
@@ -26,26 +28,32 @@ const LessonSchema = new Schema({
       type: String,
       required: true
   },
-  quiz: {
-      type: Array,
-      required: false
-  }
+  quiz: [{
+    question: String,
+    answers: [String]
+  }]
 }, {timestamps: true})
 const Lesson = mongoose.model('lesson', LessonSchema)
 
 
 // Routes
 router.post('/add-lesson', function (req, res) {
-  const lesson = new Lesson({
-      title: req.body.title,
-      author: req.body.author,
-      content: req.body.content,
-      quiz: req.body.quiz
-  })
-  lesson.save()
-      .then(function(result) {console.log(`Successfully created new lesson: ${result}`)})
-      .catch(function(err) {console.log(err)})
-  res.status(201).send('201: Success')
+    //SEE QUIZ DOCUMENTATION FOR REFERENCE ON POSTING QUIZZES
+    const strquizarr = req.body.quiz.split('|');
+    let quizarr = new Array()
+    strquizarr.forEach(obj => {
+        quizarr.push(JSON.parse(obj))
+    });
+    const lesson = new Lesson({
+        title: req.body.title,
+        author: req.body.author,
+        content: req.body.content,
+        quiz: quizarr
+    })
+    lesson.save()
+        .then(function(result) {res.status(201).send('201: Success')})
+        .catch(function(err) {console.log(err); res.status(400).send('400: Bad request')})
+    
 })
 router.get('/', function(req, res) {
   Lesson.find()

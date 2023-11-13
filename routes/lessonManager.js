@@ -47,11 +47,13 @@ const Lesson = mongoose.model("lesson", LessonSchema);
 // Routes
 router.post("/add-lesson", function (req, res) {
   //SEE QUIZ DOCUMENTATION FOR REFERENCE ON POSTING QUIZZES
-  const strquizarr = req.body.quiz.split("|");
   let quizarr = new Array();
-  strquizarr.forEach((obj) => {
+  if (typeof req.body.quiz != 'undefined') {
+    const strquizarr = req.body.quiz.split("|");
+    strquizarr.forEach((obj) => {
     quizarr.push(JSON.parse(obj));
   });
+  }
   const lesson = new Lesson({
     title: req.body.title,
     author: req.body.author,

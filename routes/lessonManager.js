@@ -5,12 +5,16 @@ const showdown = require("showdown");
 const converter = new showdown.Converter();
 //Setup mongoose and connect to the database
 const mongoose = require("mongoose");
-const dbURI =
-  "mongodb+srv://krystofbruth:UAfblLK9YffSaDiE@learning.hlz0am2.mongodb.net/skripta-har";
+const fs = require("fs");
+
+// Read config.json
+let config = fs.readFileSync('config.json')
+config = JSON.parse(config)
+
 mongoose
-  .connect(dbURI)
+  .connect(config.dbURI)
   .then(function (result) {
-    console.log(`Successfully connected to db ${dbURI}`);
+    console.log(`Successfully connected to db ${config.dbURI}`);
   })
   .catch(function (err) {
     console.log(err);

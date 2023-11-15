@@ -131,3 +131,6 @@ dist
 
 # macOS files
 .DS_Store
+
+# Custom config file with credentials
+config.json

@@ -3,18 +3,13 @@ const router = express.Router();
 const bodyParser = require("body-parser");
 const showdown = require("showdown");
 const converter = new showdown.Converter();
-//Setup mongoose and connect to the database
 const mongoose = require("mongoose");
-const fs = require("fs");
 
-// Read config.json
-let config = fs.readFileSync('config.json')
-config = JSON.parse(config)
-
+//Setup mongoose and connect to the database
 mongoose
-  .connect(config.dbURI)
+  .connect(process.env.DBURI)
   .then(function (result) {
-    console.log(`Successfully connected to db ${config.dbURI}`);
+    console.log(`Successfully connected to db ${process.env.DBURI}`);
   })
   .catch(function (err) {
     console.log(err);

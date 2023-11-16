@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 mongoose
   .connect(process.env.DBURI)
   .then(function (result) {
-    console.log(`Successfully connected to db ${process.env.DBURI}`);
+    console.log(`Successfully connected to MongoDB ${result.connection.db.databaseName}`);
   })
   .catch(function (err) {
     console.log(err);

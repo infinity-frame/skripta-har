@@ -11,22 +11,9 @@
         <span class="material-symbols-rounded">person</span><%=lesson.author%>
       </p>
       <%- converter.makeHtml(lesson.content) %>
-
-      <h2>Kvíz</h2>
-      <div class="container">
-        <div>
-          <p id="questionNum"></p>
-          <h3 id="question"></h3>
-        </div>
-        <div id="answers"></div>
-        <button id="next" onclick="next()">
-          Další
-          <span class="material-symbols-rounded">arrow_forward</span>
-        </button>
-        <p id="score"></p>
-      </div>
-    </div>
-
+      <% if (lesson.quiz.length != 0) { %>
+      <%- include("./partials/quiz.ejs")%>
+      <%}%>
     <script src="/scripts/quiz.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
   </body>
